@@ -6,6 +6,7 @@ public class Calculator {
 	private int firstNumber;
 	private int secondNumber;
 	private double results;
+	
 	private String list;
 
 	public Calculator(int firstNumber, int secondNumber, String operator) {
@@ -19,9 +20,9 @@ public class Calculator {
 	public String getString() {
 		list = firstNumber + " " + operator + " " + secondNumber + " = " + results;
 		return list;
-		
+
 	}
-	
+
 	public void doMath() {
 		if (operator.equals("+")) {
 			results = firstNumber + secondNumber;
@@ -38,7 +39,12 @@ public class Calculator {
 		if (operator.equals("^")) {
 			results = Math.pow(firstNumber, secondNumber);
 		}
-
+		if (operator.equals("√")) {
+			results = firstNumber*Math.sqrt(secondNumber);
+		}
+		if (operator.equals("log")) {
+			results = (Math.log(secondNumber) / Math.log(firstNumber)); //base
+		}
 	}
 
 	public void add() {

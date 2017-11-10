@@ -12,7 +12,7 @@ import com.lmig.gfc.calculator.models.Calculator;
 public class CalculatorController {
 
 	ArrayList<String> history = new ArrayList();
-	
+
 	@RequestMapping("/") // initial screen render
 	public ModelAndView showApp() {
 		ModelAndView mv = new ModelAndView();
@@ -28,9 +28,8 @@ public class CalculatorController {
 		Calculator calc = new Calculator(firstNumber, secondNumber, operator); // set the variable
 		calc.doMath();
 
-		String list= calc.getString();
+		String list = calc.getString();
 
-		//String list = firstNumber + " " + operator + " " + secondNumber + " = " + result;
 		mv.addObject("history", history);
 		history.add(0, list);
 		return mv;
