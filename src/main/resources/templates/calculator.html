@@ -17,9 +17,12 @@
 		<select> 
 		<input type="number" name="secondNumber" required>
 		<button>Submit</button>
-		
-		<p>{{ firstNumber }} {{ operator }} {{ secondNumber }} = {{ result }}</p>
-		
+		<div>
+		{{#history}}		 
+		 <p>{{ . }}</p>
+		{{/history}}
+		 
+		</div>
 	</form>
 </body>
 </html>

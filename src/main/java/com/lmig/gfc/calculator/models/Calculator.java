@@ -6,14 +6,23 @@ public class Calculator {
 	private int firstNumber;
 	private int secondNumber;
 	private double results;
+	private String list;
 
 	public Calculator(int firstNumber, int secondNumber, String operator) {
+
 		this.firstNumber = firstNumber;
 		this.secondNumber = secondNumber;
 		this.operator = operator;
+
 	}
 
-	public double doMath() {
+	public String getString() {
+		list = firstNumber + " " + operator + " " + secondNumber + " = " + results;
+		return list;
+		
+	}
+	
+	public void doMath() {
 		if (operator.equals("+")) {
 			results = firstNumber + secondNumber;
 		}
@@ -29,8 +38,15 @@ public class Calculator {
 		if (operator.equals("^")) {
 			results = Math.pow(firstNumber, secondNumber);
 		}
-		return results;
 
+	}
+
+	public void add() {
+		results = firstNumber + secondNumber;
+	}
+
+	public void minus() {
+		results = firstNumber - secondNumber;
 	}
 
 	public String getOperator() {
@@ -43,6 +59,10 @@ public class Calculator {
 
 	public int getSecondNumber() {
 		return secondNumber;
+	}
+
+	public double getResults() {
+		return results;
 	}
 
 }
